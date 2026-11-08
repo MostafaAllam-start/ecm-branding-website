@@ -1,6 +1,6 @@
 # ECM+ Business Suit Branding Website  (Next.js)
 
-Next.js 15 static export of the Portico website (English and Arabic/RTL), including the Document Capture page with its 3D factory.
+Next.js 15 website (English and Arabic/RTL), including the Document Capture page with its 3D factory.
 
 ## Run
 
