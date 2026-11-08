@@ -158,7 +158,7 @@ export const DEMO = {
     b("Code stamp", "ختم الرمز"), b("Archive record", "سجل الأرشفة"),
   ],
   modalTitles: [
-    b("Preview", "معاينة"), b("Scan", "المسح"), b("Extraction", "الاستخراج"),
+    b("Preview", "معاينة"), b("Scan", "المسح الضوئي"), b("Extraction", "الاستخراج"),
     b("Metadata", "البيانات الوصفية"), b("Barcode or QR", "الباركود أو QR"), b("Archive record", "سجل الأرشفة"),
   ],
   step: b("Step {n} of {N}: {t}", "الخطوة {n} من {N}: {t}"),
@@ -189,7 +189,7 @@ export const DEMO = {
   reading: b("Reading the page…", "جارٍ قراءة الصفحة…"),
   recognized: b("Text recognized: ", "تم التعرّف على النص: "),
   excerptHint: b("An excerpt of the recognized text:", "مقتطف من النص المتعرَّف عليه:"),
-  recogNote: b("ECM+ extracts the text of scanned and image files, so their content is searchable.", "تستخرج ‹ECM+› نص الملفات الممسوحة والصور، فيصبح محتواها قابلًا للبحث."),
+  recogNote: b("ECM+ extracts the text of scanned and image files, so their content is searchable.", "تستخرج ‹ECM+› نص الملفات الممسوحة ضوئيًا والصور، فيصبح محتواها قابلًا للبحث."),
   suggestedType: b("Suggested type", "النوع المقترح"),
   typeLegend: b("Suggested document type", "نوع الوثيقة المقترح"),
   classNote: b("In ECM+ today, staff choose the document type; the AI then fills its index fields.", "في ‹ECM+› اليوم يختار الموظف نوع الوثيقة، ثم يعبّئ الذكاء الاصطناعي حقول الفهرسة."),
@@ -209,7 +209,7 @@ export const DEMO = {
   docType: b("Document type", "نوع الوثيقة"), folder: b("Folder", "المجلد"), code: b("Code", "الرمز"),
   recognition: b("Text recognition", "التعرّف على النص"), done: b("Done, ", "تم، "),
   permissions: b("Permissions", "الصلاحيات"), folderRules: b("Folder rules apply", "تسري قواعد المجلد"),
-  ready: b("Your document is now ready to become part of your enterprise knowledge repository.", "أصبحت وثيقتكم الآن جاهزة لتكون جزءًا من مستودع المعرفة في مؤسستكم."),
+  ready: b("Your document is now ready to become part of your enterprise knowledge repository.", "وثيقتكم الآن جاهزة للانضمام إلى أرشيف مؤسستكم."),
   recordNote: b("Folder permissions, versions and the audit trail apply once the record is saved.", "تسري صلاحيات المجلدات والإصدارات وسجل التدقيق عند حفظ السجل."),
   tagDemo: b("Demonstration", "عرض توضيحي"),
   tagPotential: b("Potential integration", "تكامل محتمل"),
@@ -234,14 +234,14 @@ const sprite = (id: string): IconSpec => ({ kind: "sprite", id });
 export const HERO = {
   crumbDocs: b("Document Management", "إدارة الوثائق"),
   eyebrow: b("Document Capture", "التقاط الوثائق"),
-  title: b("Capture Everything. Understand Every Document.", "التقطوا كل شيء. وافهموا كل وثيقة."),
-  lead: b("ECM+ brings paper, files and emails into one archive, reads their text in Arabic and English, and proposes the index fields for staff to confirm.", "تجمع منظومة ‹ECM+› الورق والملفات ورسائل البريد في أرشيف واحد، وتقرأ نصوصها بالعربية والإنجليزية، وتقترح حقول الفهرسة ليراجعها فريقكم."),
+  title: b("Capture Everything. Understand Every Document.", "التقاط كل شيء وفهم كل وثيقة."),
+  lead: b("A paper document is prepared, sorted by category and scanned. Poor scans are rescanned, then ECM+ reads the text in Arabic and English and proposes the index fields for staff to confirm. The digital copy is archived with a barcode or QR code, and the paper original is stored under the same code.", "تُحضَّر الوثيقة الورقية وتُصنَّف حسب فئتها ثم تُمسح ضوئيًا، وتُعاد الصفحات الرديئة إلى المسح من جديد. بعد ذلك تقرأ منظومة ‹ECM+› النص بالعربية والإنجليزية وتقترح حقول الفهرسة ليراجعها الفريق، لتُحفظ النسخة الرقمية في الأرشيف مع باركود أو رمز QR، وتُحفظ الوثيقة الورقية الأصلية بالرمز نفسه."),
   explore: b("Explore Document Capture", "استكشف التقاط الوثائق"),
   archived: b("Archived", "مؤرشف"),
 };
 
 export const SECTION_COPY = {
-  channels: { label: b("Capture channels", "قنوات الالتقاط"), title: b("One Platform. Multiple Ways to Capture", "منصة واحدة. طرق متعددة للالتقاط") },
+  channels: { label: b("Capture channels", "طرق الالتقاط"), title: b("One Platform. Multiple Ways to Capture", "منصة واحدة. طرق متعددة للالتقاط") },
   intel: { label: b("Document intelligence", "ذكاء الوثائق"), title: b("Beyond Digitization. Into Document Intelligence.", "ما بعد الرقمنة: نحو ذكاء الوثائق.") },
   benefits: { label: b("Benefits", "الفوائد"), title: b("Turn Document Processing into Business Efficiency", "حوّلوا معالجة الوثائق إلى كفاءة في العمل") },
   adv: { label: b("Advanced capabilities", "قدرات متقدمة"), title: b("Built for high-volume, bilingual archives", "مصمّمة للأرشيفات ثنائية اللغة عالية الحجم") },
@@ -258,8 +258,8 @@ export const CHANNELS: CardDef[] = [
 
 const SHOWN = b("Shown in the demonstration", "يظهر في العرض التوضيحي");
 export const INTEL: CardDef[] = [
-  { icon: path("image"), title: b("Image processing", "معالجة الصور"), text: b("Straightening, cropping and cleaning scanned pages before recognition.", "تعديل ميل الصفحات الممسوحة وقصّها وتنقيتها قبل التعرّف."), side: { kind: "demo", text: SHOWN } },
-  { icon: sprite("i-ocr"), title: b("Text recognition, Arabic and English", "التعرّف على النصوص بالعربية والإنجليزية"), text: b("OCR reads scanned and image files, so their content is searchable and opens at the matching page.", "يقرأ التعرّف الضوئي (‹OCR›) الملفات الممسوحة والصور، فيصبح محتواها قابلًا للبحث ويُفتح عند الصفحة المطابقة.") },
+  { icon: path("image"), title: b("Image processing", "معالجة الصور"), text: b("Straightening, cropping and cleaning scanned pages before recognition.", "تعديل ميل الصفحات الممسوحة ضوئيًا وقصّها وتنقيتها قبل التعرّف."), side: { kind: "demo", text: SHOWN } },
+  { icon: sprite("i-ocr"), title: b("Text recognition, Arabic and English", "التعرّف على النصوص بالعربية والإنجليزية"), text: b("OCR reads scanned and image files, so their content is searchable and opens at the matching page.", "يقرأ التعرّف الضوئي (‹OCR›) الملفات الممسوحة ضوئيًا والصور، فيصبح محتواها قابلًا للبحث ويُفتح عند الصفحة المطابقة.") },
   { icon: sprite("i-tag"), title: b("Classification", "التصنيف"), text: b("Suggesting the document type from its content. In ECM+ today, staff choose the type, and its index fields follow.", "اقتراح نوع الوثيقة من محتواها. في ‹ECM+› اليوم يختار الموظف النوع، فتتبعه حقول الفهرسة."), side: { kind: "demo", text: SHOWN } },
   { icon: sprite("i-spark"), title: b("Metadata extraction", "استخراج البيانات"), text: b("Auto fill from file reads the document and proposes values for the type’s index fields: text, numbers and dates. Only empty fields are filled, and staff review before saving. An invoice yields its number, date and total; a contract its parties and expiry; an employee file its name, number and hire date.", "تقرأ «التعبئة التلقائية من الملف» الوثيقة وتقترح قيم حقول الفهرسة لنوعها: نصوصًا وأرقامًا وتواريخ. تُعبَّأ الحقول الفارغة فقط، ويراجعها الموظف قبل الحفظ. فتعطي الفاتورة رقمها وتاريخها وإجماليها، والعقد أطرافه وتاريخ انتهائه، وملف الموظف اسمه ورقمه وتاريخ تعيينه.") },
   { icon: path("barcode"), title: b("Barcode and QR codes", "الباركود ورموز QR"), text: b("ECM+ generates a code for each document and stamps it on the pages.", "تولّد ‹ECM+› رمزًا لكل وثيقة وتختمه على صفحاتها."), side: { kind: "potential", text: b("Possible through an integration: reading codes on incoming paper to route or split batches", "ممكن عبر تكامل: قراءة الرموز على الورق الوارد لتوجيه الدفعات أو تقسيمها") } },
@@ -268,22 +268,20 @@ export const INTEL: CardDef[] = [
 
 export const BENEFITS: CardDef[] = [
   { icon: sprite("i-spark"), title: b("Less manual entry", "إدخال يدوي أقل"), text: b("Index fields are proposed from the file, so staff confirm rather than type.", "تُقترح حقول الفهرسة من الملف، فيكتفي الموظف بالتأكيد بدل الإدخال.") },
-  { icon: sprite("i-search"), title: b("Searchable from day one", "قابلة للبحث منذ اليوم الأول"), text: b("Recognized text and index fields make every captured document findable by meaning and by field.", "يجعل النص المتعرَّف عليه وحقول الفهرسة كل وثيقة ملتقطة قابلة للبحث بالمعنى وبالحقل.") },
+  { icon: sprite("i-search"), title: b("Searchable", "قابلة للبحث"), text: b("Recognized text and index fields make every captured document findable by meaning and by field.", "يجعل النص المتعرَّف عليه وحقول الفهرسة كل وثيقة ملتقطة قابلة للبحث بالمعنى وبالحقل.") },
   { icon: sprite("i-archive"), title: b("One archive for every channel", "أرشيف واحد لكل القنوات"), text: b("Paper, files, cloud drives and email land in the same document types and folders.", "يصل الورق والملفات ومحركات التخزين السحابية والبريد إلى أنواع الوثائق والمجلدات نفسها.") },
   { icon: sprite("i-lock"), title: b("Governed from capture", "محكومة منذ الالتقاط"), text: b("Folder permissions, versions and the audit trail apply the moment a document is saved.", "تسري صلاحيات المجلدات والإصدارات وسجل التدقيق لحظة حفظ الوثيقة.") },
 ];
 
 export const CAPS: { text: Bi; tag?: "demo" | "potential" }[] = [
-  { text: b("Auto-feeder scanning", "المسح عبر وحدة التغذية التلقائية") },
-  { text: b("Voice and video notes captured beside documents", "ملاحظات صوتية ومرئية تُلتقط إلى جانب الوثائق") },
+  { text: b("Auto-feeder scanning", "المسح الضوئي عبر وحدة التغذية التلقائية") },
+  { text: b("Audio and video files", "ملفات الصوت والفيديو") },
   { text: b("Archive migration from existing systems", "نقل الأرشيفات من الأنظمة القائمة") },
   { text: b("REST API for other systems", "واجهة ‹REST API› للأنظمة الأخرى") },
   { text: b("Google Drive and OneDrive capture", "الالتقاط من ‹Google Drive› و‹OneDrive›") },
-  { text: b("Outlook add-in that saves and routes emails", "إضافة ‹Outlook› لحفظ الرسائل وإحالتها") },
+  { text: b("Outlook, Word, Excel and PowerPoint add-ins that save and route emails and files", "‹Add-ins› لتطبيقات ‹Outlook› و‹Word› و‹Excel› و‹PowerPoint› لحفظ الرسائل والملفات وإحالتها") },
   { text: b("Generated barcode and QR stamps", "أختام باركود و‹QR› مولَّدة") },
   { text: b("Batch splitting by barcode", "تقسيم الدفعات بالباركود"), tag: "potential" },
-  { text: b("Rule-based validation", "التحقق وفق القواعد"), tag: "demo" },
-  { text: b("Scheduled folder capture", "الالتقاط المجدول من المجلدات"), tag: "potential" },
 ];
 
 export const DEPTS: CardDef[] = [
@@ -295,8 +293,8 @@ export const DEPTS: CardDef[] = [
 ];
 
 export const CTA = {
-  title: b("Make Every Document Work for Your Business.", "اجعلوا كل وثيقة تعمل لصالح أعمالكم."),
-  text: b("See capture on your own document types, in Arabic or English.", "شاهدوا الالتقاط على أنواع وثائقكم، بالعربية أو الإنجليزية."),
+  title: b("Make Every Document Work for Your Business.", "حوّلوا وثائقكم إلى أصل رقمي يخدم أعمالكم."),
+  text: b("See capture on your own document types, in Arabic or English.", "مشاهدة الالتقاط على أنواع الوثائق الخاصة بكم، بالعربية أو الإنجليزية."),
   request: b("Request a Demo", "اطلب عرضًا تجريبيًا"),
   contact: b("Contact Our Team", "تواصلوا مع فريقنا"),
   prefill: b("We would like to discuss document capture with your team.", "نرغب في مناقشة التقاط الوثائق مع فريقكم."),
@@ -308,11 +306,11 @@ export const CTA = {
 const STAGES: { t: Bi; d: Bi; demo?: boolean }[] = [
   { t: b("Preparation", "التحضير"), d: b("Paper files are opened, staples removed and folded sheets flattened before they go to the scanner.", "تُفتح الملفات الورقية وتُزال الدبابيس وتُفرد الأوراق المطوية قبل وصولها إلى الماسح.") },
   { t: b("Classification", "التصنيف"), d: b("Documents are sorted into five categories. In ECM+ today, staff choose the document type.", "تُفرز الوثائق في خمس فئات. في ‹ECM+› اليوم يختار الموظف نوع الوثيقة."), demo: true },
-  { t: b("Scanning", "المسح الضوئي"), d: b("Pages are scanned in batches and uploaded to ECM+. A poor scan is flagged instead of passing through.", "تُمسح الصفحات على دفعات وتُرفع إلى ‹ECM+›. ويُعلَّم المسح الرديء بدل تمريره.") },
-  { t: b("Rescan and quality control", "إعادة المسح ومراقبة الجودة"), d: b("A flagged page goes to a separate line, is scanned again and rejoins the flow.", "تنتقل الصفحة المعلَّمة إلى مسار منفصل وتُمسح من جديد ثم تعود إلى التدفق."), demo: true },
+  { t: b("Scanning", "المسح الضوئي"), d: b("Pages are scanned in batches and uploaded to ECM+. A poor scan is flagged instead of passing through.", "تُمسح الصفحات على دفعات وتُرفع إلى ‹ECM+›. ويُعلَّم المسح الضوئي الرديء بدل تمريره.") },
+  { t: b("Rescan and quality control", "إعادة المسح الضوئي ومراقبة الجودة"), d: b("A flagged page goes to a separate line, is scanned again and rejoins the flow.", "تنتقل الصفحة المعلَّمة إلى مسار منفصل وتُمسح من جديد ثم تعود إلى التدفق."), demo: true },
   { t: b("Extraction", "الاستخراج"), d: b("Text is recognized and values are read from the header, title, references, dates, body, table and footer.", "يُتعرَّف على النص وتُقرأ القيم من الرؤوس والعنوان والمراجع والتواريخ والمحتوى والجدول ونهاية الصفحة."), demo: true },
   { t: b("Metadata", "البيانات الوصفية"), d: b("AI proposes the index fields and staff review them. Only empty fields are filled.", "يقترح الذكاء الاصطناعي حقول الفهرسة ويراجعها الموظف، وتُعبَّأ الحقول الفارغة فقط.") },
-  { t: b("Barcode and archive", "الباركود والأرشفة"), d: b("The digital documents move from the scanning screen to the ECM+ archive, and the record keeps its code as metadata. The barcode or QR code is printed and stamped only on the original paper, which is stored by category in the paper archive.", "تنتقل الوثائق الرقمية من شاشة المسح إلى أرشيف ‹ECM+› ويحتفظ السجل برمزه كبيانات وصفية. أما الباركود أو رمز ‹QR› فيُطبع ويُختم على الأوراق الأصلية فقط، وتُخزَّن حسب الفئة في الأرشيف الورقي.") },
+  { t: b("Barcode and archive", "الباركود والأرشفة"), d: b("The digital documents move from the scanning screen to the ECM+ archive, and the record keeps its code as metadata. The barcode or QR code is printed and stamped only on the original paper, which is stored by category in the paper archive.", "تنتقل الوثائق الرقمية من شاشة المسح الضوئي إلى أرشيف ‹ECM+› ويحتفظ السجل برمزه كبيانات وصفية. أما الباركود أو رمز ‹QR› فيُطبع ويُختم على الأوراق الأصلية فقط، وتُخزَّن حسب الفئة في الأرشيف الورقي.") },
 ];
 const CAT_NAMES: Bi[] = [
   b("Invoices", "الفواتير"), b("Contracts", "العقود"), b("Applications", "الطلبات"),
@@ -338,8 +336,8 @@ export const FACTORY = {
   hints: [
     b("Select a sheet to see its condition and what the worker does", "اختاروا ورقة لتروا حالتها وما سيفعله الموظف بها"),
     b("Select a category bin to open its workflow", "اختاروا حاوية فئة لفتح مسارها"),
-    b("Select the scanning screen to review the scanned documents", "اختاروا شاشة المسح لمراجعة الوثائق الممسوحة"),
-    b("Select the flagged sheet or the screen to follow the rescan", "اختاروا الورقة المعلَّمة أو الشاشة لمتابعة إعادة المسح"),
+    b("Select the scanning screen to review the scanned documents", "اختاروا شاشة المسح الضوئي لمراجعة الوثائق الممسوحة ضوئيًا"),
+    b("Select the flagged sheet or the screen to follow the rescan", "اختاروا الورقة المعلَّمة أو الشاشة لمتابعة إعادة المسح الضوئي"),
     b("Select the document to see the extracted fields", "اختاروا الوثيقة لرؤية الحقول المستخرجة"),
     b("Select the form to see how fields are filled from the document", "اختاروا النموذج لرؤية تعبئة الحقول من الوثيقة"),
     b("Select the archive screen or a box to open the archived document", "اختاروا شاشة الأرشيف أو صندوقًا لفتح الوثيقة المؤرشفة"),
@@ -347,7 +345,7 @@ export const FACTORY = {
   labels: {
     header: b("Header", "الرؤوس"), title: b("Title", "العنوان"), refs: b("References", "المراجع"), dates: b("Dates", "التواريخ"),
     body: b("Body", "المحتوى"), table: b("Table", "الجدول"), footer: b("Footer", "نهاية الصفحة"),
-    manual: b("Manual preparation", "التحضير اليدوي"), rescan: b("Rescan line", "مسار إعادة المسح"), digital: b("Scanning screen: digital documents", "شاشة المسح: الوثائق الرقمية"),
+    manual: b("Manual preparation", "التحضير اليدوي"), rescan: b("Rescan line", "مسار إعادة المسح الضوئي"), digital: b("Scanning screen: digital documents", "شاشة المسح: الوثائق الرقمية"),
     originals: b("Original paper", "الأوراق الأصلية"), archive: b("ECM+ Documents archive", "أرشيف وثائق ECM+‎"),
     paperArchive: b("Original paper: code stamped, archived by category", "الأوراق الأصلية: مختومة بالرمز ومؤرشفة حسب الفئة"),
   } as Record<string, Bi>,
